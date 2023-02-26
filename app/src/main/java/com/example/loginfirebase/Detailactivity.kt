@@ -18,6 +18,7 @@ class Detailactivity : AppCompatActivity() {
         {
             binding.cover.setImageResource(vehicle.cover)
             binding.titleplaceholder.text = vehicle.titlename
+            binding.availablevendor.text = vehicle.vendors
         }
     }
 

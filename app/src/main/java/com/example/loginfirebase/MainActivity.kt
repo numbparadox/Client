@@ -55,5 +55,6 @@ class MainActivity : AppCompatActivity() , vehicleclicklistener {
         vehicleList.add(vehicle3)
     }
 
-
+    override fun onBackPressed() {
+    }
 }

@@ -25,19 +25,19 @@ class SignInActivity : AppCompatActivity() {
             val email = binding.inputEmail.text.toString()
             val pass = binding.inputPassword.text.toString()
 
-            if ( email.isNotEmpty() && pass.isNotEmpty()){
-                firebaseAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener {
-                    if(it.isSuccessful){
+            if (email.isNotEmpty() && pass.isNotEmpty()) {
+                firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
+                    if (it.isSuccessful) {
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                         Toast.makeText(this, "Logged In Successfully", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
                     }
-                    }
-                }else {
+                }
+            } else {
                 Toast.makeText(this, "Empty Fields are not allowed.", Toast.LENGTH_SHORT).show()
             }
-            }
+        }
     }
 }
